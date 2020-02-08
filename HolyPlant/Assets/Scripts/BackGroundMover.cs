@@ -42,6 +42,10 @@ public class BackGroundMover : MonoBehaviour
         if (manager.winCounter > 0f)
             transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
 
+
+        float input = Input.GetAxis("Horizontal");
+        print(input);
+
     }
 
 
