@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:HolyPlant/Assets/Jerome/Jerome.unity.meta
 guid: 50c78e5065ff7a046bf701a794bd677e
+=======
+guid: 516992145cb2e5a4397b9c70a511da01
+folderAsset: yes
+>>>>>>> 6ddefe823d27a0599a726257c26a3511caffd1c9:HolyPlant/Assets/Scripts.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
