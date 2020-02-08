@@ -35,7 +35,7 @@ public class Drop : MonoBehaviour
         growTime = settings.growTime;
 
 
-        growPerSecond = 1f / (fullScale - initialScale);
+        growPerSecond = (fullScale - initialScale) / growTime;
         transform.localScale = new Vector3(initialScale, initialScale, initialScale);
         isGrowing = true;
 

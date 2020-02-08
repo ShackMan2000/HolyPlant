@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    [HideInInspector]
+    public float winCounter;
 
     [SerializeField]
     private float dieAfterXSecondsDeadPlant;
@@ -15,12 +17,14 @@ public class GameManager : MonoBehaviour
 
 
     private bool isGameOver;
-
+    public float timeTillWin;
 
 
     private void Awake()
     {
         deadPlantTime.Reset();
+        winCounter = timeTillWin;
+
     }
 
 
@@ -32,6 +36,10 @@ public class GameManager : MonoBehaviour
     {
         if (deadPlantTime.currentValue > dieAfterXSecondsDeadPlant)
             GameOver();
+
+        winCounter -= Time.deltaTime;
+        if (winCounter < 0f)
+            print("winnger");
     }
 
 
