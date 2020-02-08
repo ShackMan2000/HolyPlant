@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "FallingObjectData", menuName = "HolyPlant/FallingObjectData", order = 0)]
 public class FallingObjectData : ScriptableObject {
 
+    public Sprite sprite;
+
+
     public float mass;
 
     public float effectOnPlantStage;

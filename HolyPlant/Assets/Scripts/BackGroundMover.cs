@@ -43,8 +43,8 @@ public class BackGroundMover : MonoBehaviour
             transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
 
 
-        float input = Input.GetAxis("Horizontal");
-        print(input);
+      
+       
 
     }
 

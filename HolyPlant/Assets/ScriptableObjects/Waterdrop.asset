@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f2c54e7d75974438f6bdc8add1aa04, type: 3}
   m_Name: Waterdrop
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 59bf48e27e98d204a8de415aba977950, type: 3}
   mass: 1
-  effectOnPlantStage: 10
-  initialScale: 0.3
-  fullScale: 1
+  effectOnPlantStage: 1
+  initialScale: 0.1
+  fullScale: 0.3
   growTime: 2

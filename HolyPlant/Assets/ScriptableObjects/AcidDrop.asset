@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f2c54e7d75974438f6bdc8add1aa04, type: 3}
   m_Name: AcidDrop
   m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 6426f39e25214934b843db30fe56fe87, type: 3}
   mass: 1
-  effectOnPlantStage: -1
-  initialScale: 0.3
-  fullScale: 4
+  effectOnPlantStage: -0.3
+  initialScale: 0.1
+  fullScale: 0.3
   growTime: 2

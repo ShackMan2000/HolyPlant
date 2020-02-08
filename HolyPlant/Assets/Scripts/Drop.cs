@@ -16,12 +16,13 @@ public class Drop : MonoBehaviour
     [HideInInspector]
     public float effectOnPlantStage;
 
-
+    private SpriteRenderer spriteRenderer;
 
 
     private void Awake()
     {
         GetComponent<Rigidbody2D>().isKinematic = true;
+        spriteRenderer = GetComponent<SpriteRenderer>();       
     }
 
     public  void Initialize(FallingObjectData settings)
@@ -34,6 +35,8 @@ public class Drop : MonoBehaviour
         fullScale = settings.fullScale;
         growTime = settings.growTime;
 
+
+        spriteRenderer.sprite = settings.sprite;
 
         growPerSecond = (fullScale - initialScale) / growTime;
         transform.localScale = new Vector3(initialScale, initialScale, initialScale);
