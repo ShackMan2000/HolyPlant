@@ -5,7 +5,7 @@ using UnityEngine;
 public class ManagePlant : MonoBehaviour
 {
     public GameObject PlantPart;
-    
+        
     // Start is called before the first frame update
     void Start()
     {
