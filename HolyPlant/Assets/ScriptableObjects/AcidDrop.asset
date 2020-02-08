@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mass: 1
   effectOnPlantStage: 10
+  initialScale: 0.3
+  fullScale: 1
+  growTime: 2

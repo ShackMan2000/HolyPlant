@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7787579103415671642}
   - component: {fileID: 8203277520728080864}
-  - component: {fileID: 5537716017326205930}
   - component: {fileID: 6992593791739923457}
   - component: {fileID: 6071959929945221499}
+  - component: {fileID: 2427754404042320516}
   m_Layer: 0
-  m_Name: FallingObject
+  m_Name: Drop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -84,19 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5537716017326205930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7459715682834589054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5152013088ad264489f830b652c7684, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effectOnPlantStage: 0
 --- !u!50 &6992593791739923457
 Rigidbody2D:
   serializedVersion: 4
@@ -134,3 +121,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &2427754404042320516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7459715682834589054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e9b01024bc4ba4db47ef7f0307efee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectOnPlantStage: 0
+  initialScale: 0.5
+  fullScale: 1
+  growTime: 1

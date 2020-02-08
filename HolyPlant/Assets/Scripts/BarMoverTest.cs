@@ -35,6 +35,7 @@ public class BarMoverTest : MonoBehaviour
         bar.position = middlePoint;
         bar.rotation = Quaternion.LookRotation(Vector3.forward, leftHand.position - bar.position);
         bar.Rotate(new Vector3(0f, 0f, 90f));
+     
 
 
     }

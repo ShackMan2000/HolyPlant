@@ -9,6 +9,8 @@ public class FallingObjectData : ScriptableObject {
 
     public float effectOnPlantStage;
 
+    public float initialScale, fullScale, growTime;
+
 
     public string getMass() {
      return mass.ToString();   

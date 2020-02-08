@@ -39,12 +39,6 @@ public class Plant : MonoBehaviour
     {
         growStage = 0.5f;
         SetSprites();
-
-
-
-
-
-
     }
 
 
@@ -62,7 +56,7 @@ public class Plant : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        FallingObject drop = collision.GetComponent<FallingObject>();
+        Drop drop = collision.GetComponent<Drop>();
 
         if (drop != null)
         {
