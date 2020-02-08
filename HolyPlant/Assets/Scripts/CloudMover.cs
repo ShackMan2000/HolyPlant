@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class CloudMover : MonoBehaviour
 {
-
-    [SerializeField]
-    private float rotationSpeed;
+    public float rotationSpeed;
     public GameObject Cloud;
     public float SideBoundary;
     public float MaxSpeed;
@@ -24,14 +22,16 @@ public class CloudMover : MonoBehaviour
         Vector3 oldRotation = this.transform.eulerAngles;
         float changeR = 0;
 
-        if (Input.GetKey(KeyCode.Z))
+        /* if (Input.GetKey(KeyCode.Z))
         {
-            changeR = 1f;//rotationSpeed * Time.deltaTime;
+            changeR = //1f;//rotationSpeed * Time.deltaTime;
         }
         else if (Input.GetKey(KeyCode.P))
         {
             changeR = -1f;
-        };
+        }; */
+
+        changeR = Input.GetAxis("Horizontal") * -1 * rotationSpeed;
 
         Vector3 rotAm = new Vector3(0f, 0f, changeR);
         this.transform.Rotate(rotAm); 
@@ -44,12 +44,12 @@ public class CloudMover : MonoBehaviour
 
         if ((Mathf.Abs(Cloud.transform.position.x) < SideBoundary)) 
         {
-            changeVec = this.transform.rotation.z / 90 * MaxSpeed; 
+            changeVec = this.transform.rotation.z / 90 * MaxSpeed * -1; 
         } else 
         {
-            if (Mathf.Sign(Cloud.transform.position.x) != Mathf.Sign(Cloud.transform.rotation.z)) 
+            if (Mathf.Sign(Cloud.transform.position.x) == Mathf.Sign(Cloud.transform.rotation.z)) 
             {
-                changeVec = this.transform.rotation.z / 90 * MaxSpeed;
+                changeVec = this.transform.rotation.z / 90 * MaxSpeed * -1;
             }
         }
         Cloud.transform.position = new Vector3(oldPosition.x + changeVec, oldPosition.y, oldPosition.z);
