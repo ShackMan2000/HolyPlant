@@ -5,7 +5,17 @@ using UnityEngine;
 [CreateAssetMenu]
 public class FloatRef : ScriptableObject
 {
+    public float initialValue;
+    
     public float currentValue;
+
+
+
+
+    public void Reset()
+    {
+        currentValue = initialValue;
+    }
 
 
 

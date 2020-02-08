@@ -7,6 +7,8 @@ public class FallingObjectData : ScriptableObject {
 
     public float mass;
 
+    public float effectOnPlantStage;
+
 
     public string getMass() {
      return mass.ToString();   

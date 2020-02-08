@@ -5,10 +5,13 @@ using UnityEngine;
 public class Plant : MonoBehaviour
 {
     [SerializeField]
-    private float growStagePerMinute;
+    private float shrinkStagePerMinute;
+
+    [SerializeField]
+    private float looseGameAfterXSecondsNoPlant;
 
 
-    public float growStage;
+    public float growStage, oldGrowStage;
 
 
     [SerializeField]
@@ -16,15 +19,59 @@ public class Plant : MonoBehaviour
 
 
 
+    [SerializeField]
+    private FloatRef deadPlantTime;
+
+
+  
+    private GameManager manager;
+
+
+
+    private void Awake()
+    {
+        manager = FindObjectOfType<GameManager>();
+        NewGame();
+        
+    }
+
     public void NewGame()
     {
-        growStage = 0f;
+        growStage = 0.5f;
+        SetSprites();
+
+
+
+
+
+
     }
 
 
 
+    private void Update()
+    {
+        growStage -= (shrinkStagePerMinute / 60f) * Time.deltaTime;
+        if (growStage < 0f)
+            deadPlantTime.currentValue += Time.deltaTime;
 
-    
+        SetSprites();
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        FallingObject drop = collision.GetComponent<FallingObject>();
+
+        if (drop != null)
+        {
+            growStage += drop.effectOnPlantStage;
+            SetSprites();
+        }
+    }
+
+
 
 
 
@@ -33,21 +80,29 @@ public class Plant : MonoBehaviour
     private void SetSprites()
     {
         int stages = Mathf.CeilToInt(growStage);
+        if (oldGrowStage == stages) return;
+
+        oldGrowStage = stages;
 
         foreach (var part in plantParts)
         {
             part.gameObject.SetActive(false);
         }
 
+
+        stages = Mathf.Clamp(stages, 0, plantParts.Count);
+
+
+
         for (int i = 0; i < stages; i++)
         {
             plantParts[i].gameObject.SetActive(true);
-        }        
+        }
 
     }
 
 
 
 
-  
+
 }

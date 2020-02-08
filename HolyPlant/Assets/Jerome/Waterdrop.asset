@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Waterdrop
   m_EditorClassIdentifier: 
   mass: 1
+  effectOnPlantStage: 10
