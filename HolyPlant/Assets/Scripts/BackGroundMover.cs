@@ -9,7 +9,7 @@ public class BackGroundMover : MonoBehaviour
     [SerializeField]
     private Camera camera;
 
-  
+
 
     private SpriteRenderer renderer;
 
@@ -29,7 +29,7 @@ public class BackGroundMover : MonoBehaviour
 
         float topOfCamera = camera.ViewportToWorldPoint(new Vector3(1, 1, camera.nearClipPlane)).y;
         float topOfBackground = renderer.transform.position.y + renderer.sprite.bounds.extents.y * renderer.transform.localScale.y;
-      
+
 
         speed = (topOfBackground - topOfCamera) / manager.timeTillWin;
 
@@ -39,7 +39,13 @@ public class BackGroundMover : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
+        if (manager.winCounter > 0f)
+            transform.position = new Vector2(transform.position.x, transform.position.y - speed * Time.deltaTime);
+
+
+        float input = Input.GetAxis("Horizontal");
+        print(input);
+
     }
 
 
